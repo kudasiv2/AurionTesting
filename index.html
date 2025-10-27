@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurion Finance - Where Blockchain Meets Sustainable Growth</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bignumber.js@9.1.2/bignumber.min.js"></script>
+    
+    <!-- Tautan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="gold-bar"></div>
+            <div class="gold-bar"></div>
+            <div class="gold-bar"></div>
+            <div class="gold-bar"></div>
+            <div class="gold-bar"></div>
+        </div>
+        <div class="preloader-text">AURION CLUB</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="images/logo.png" alt="AURION CLUB" class="logo">
+                <div class="logo__text">AURION CLUB</div>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link active" data-section="home">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" data-section="dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" data-section="invest">Invest</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" data-section="referral">Referral</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" data-section="whitepaper">Whitepaper</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" data-section="audit">Audit Report</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" data-section="downloads">Downloads</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" data-section="faq">FAQ</a>
+                    </li>
+                </ul>
+
+                <div class="nav__buttons">
+                    <button class="btn btn--outline" id="connectWallet">
+                        <i class="fas fa-wallet"></i>
+                        Connect Wallet
+                    </button>
+                </div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section class="hero section" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="badge">The Next Generation in the DeFi World</span>
+                    </div>
+                    <h1 class="hero__title">
+                        <span class="gradient-text">Aurion Club </span> 
+                        – Where Blockchain Meets Sustainable Growth
+                    </h1>
+                    <p class="hero__description">
+                        Experience decentralized wealth creation through verified smart contracts, fixed ROI plans, and tiered referral bonuses – designed to empower investors with security, clarity, and passive income stability
+                    </p>
+                    <div class="hero__buttons">
+                        <button class="btn btn--primary" data-section="invest">
+                            <i class="fas fa-rocket"></i>
+                            Start Investing
+                        </button>
+                        <button class="btn btn--outline" data-section="dashboard">
+                            <i class="fas fa-chart-line"></i>
+                            View Dashboard
+                        </button>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <div class="floating-card">
+                        <div class="card__header">
+                            <h3>Live Contract Stats</h3>
+                            <div class="live-indicator">
+                                <span class="dot"></span>
+                                LIVE
+                            </div>
+                        </div>
+                        <div class="card__content">
+                            <div class="stat-item">
+                                <span>Total Value Locked</span>
+                                <span class="value" id="contractBalance">0 USDT</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Daily ROI</span>
+                                <span class="value">1% - 2%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Investment Plans</span>
+                                <span class="value">5 Tiers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Referral Levels</span>
+                                <span class="value">4 Levels</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section class="dashboard-section section" id="dashboard" style="display: none;">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Your Dashboard</h2>
+                    <p class="section__subtitle">Monitor your investments and earnings in real-time with our premium analytics</p>
+                </div>
+                <div class="alert alert-warning" id="dashboardWalletAlert">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Please connect your wallet to view your dashboard</span>
+                </div>
+                <div class="quick-stats" id="quickStats" style="display: none;">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="totalDeposits">0 USDT</div>
+                            <div class="stat-label">Total Deposits</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="availableEarnings">0 USDT</div>
+                            <div class="stat-label">Available Earnings</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-arrow-down"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="totalWithdrawn">0 USDT</div>
+                            <div class="stat-label">Total Withdrawn</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-gift"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="referralBonus">0 USDT</div>
+                            <div class="stat-label">Referral Earnings</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons" id="actionButtons" style="display: none;">
+                    <button class="btn btn--primary" data-section="invest"><i class="fas fa-rocket"></i> Start Investing</button>
+                    <button class="btn btn--outline" id="withdrawEarnings"><i class="fas fa-download"></i> Withdraw Earnings</button>
+                    <button class="btn btn--outline" data-section="referral"><i class="fas fa-share"></i> Referral Program</button>
+                </div>
+                <div class="empty-state" id="noInvestmentsMessage" style="display: none;">
+                    <div class="empty-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>No Investment History</h3>
+                    <p>Start your first investment to begin earning premium returns</p>
+                    <button class="btn btn--primary" data-section="invest"><i class="fas fa-rocket"></i> Start Investing</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Invest Section -->
+        <section class="invest-section section" id="invest" style="display: none;">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Investment Plans</h2>
+                    <p class="section__subtitle">Select from our exclusive investment tiers and start earning premium returns</p>
+                </div>
+                <div class="alert alert-warning" id="investWalletAlert">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Please connect your wallet to start investing</span>
+                </div>
+                <div class="investment-plans" id="investmentPlans"></div>
+                <div class="investment-form-container" id="investmentForm">
+                    <div class="form-header">
+                        <h2>Complete Your Investment</h2>
+                        <button class="btn btn--outline btn-sm" id="backToPlans"><i class="fas fa-arrow-left"></i> Back to Plans</button>
+                    </div>
+                    <div class="investment-form">
+                        <div class="form-group">
+                            <label for="selectedPlan">Selected Plan</label>
+                            <div class="plan-summary" id="selectedPlanSummary"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="investmentAmount">Investment Amount (USDT)</label>
+                            <input type="number" id="investmentAmount" class="form-input" placeholder="Enter amount in USDT" min="20" step="1">
+                            <div class="amount-range" id="amountRange"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="referrerAddress">Referrer Address (Optional)</label>
+                            <input type="text" id="referrerAddress" class="form-input" placeholder="Enter referrer wallet address">
+                            <small>If you were referred by someone, enter their wallet address here</small>
+                        </div>
+                        <div class="investment-summary">
+                            <h3>Investment Summary</h3>
+                            <div class="summary-item">
+                                <span>Investment Amount:</span>
+                                <span id="summaryAmount">0 USDT</span>
+                            </div>
+                        </div>
+                        <button class="btn btn--primary btn-lg" id="confirmInvestment" style="width: 100%;"><i class="fas fa-check-circle"></i> Confirm Investment</button>
+                    </div>
+                </div>
+                <div class="investment-success-popup" id="investmentSuccessPopup">
+                    <div class="investment-success">
+                        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                        <h2>Investment Successful!</h2>
+                        <p>You can now monitor your earnings in the dashboard</p>
+                        <div class="success-actions">
+                            <button class="btn btn--primary" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Go to Dashboard</button>
+                            <button class="btn btn--outline" id="newInvestment"><i class="fas fa-plus"></i> New Investment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Referral Section -->
+        <section class="referral-section section" id="referral" style="display: none;">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Referral Program</h2>
+                    <p class="section__subtitle">Earn exclusive commissions from 4 levels of your referral network</p>
+                </div>
+                <div class="alert alert-warning" id="referralWalletAlert">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Please connect your wallet to access referral program</span>
+                </div>
+                <div class="referral-stats" id="referralStats" style="display: none;">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="totalTeam">0</div>
+                            <div class="stat-label">Total Team</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-user-plus"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="referralDirectReferrals">0</div>
+                            <div class="stat-label">Direct Referrals</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-gift"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="availableBonus">0 USDT</div>
+                            <div class="stat-label">Referral Earnings</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="referral-link-container" id="referralLinkSection" style="display: none;">
+                    <h2>Your Referral Link</h2>
+                    <p>Share this link with your network and earn premium commissions from their investments</p>
+                    <div class="link-display">
+                        <input type="text" id="referralLink" class="link-input" readonly>
+                        <button class="btn btn--primary" id="copyLink"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                    <div class="social-share">
+                        <button class="social-btn" id="shareTelegram"><i class="fab fa-telegram"></i></button>
+                        <button class="social-btn" id="shareTwitter"><i class="fab fa-twitter"></i></button>
+                        <button class="social-btn" id="shareWhatsapp"><i class="fab fa-whatsapp"></i></button>
+                    </div>
+                </div>
+                <div class="levels-grid">
+                    <div class="level-card">
+                        <div class="level-header">
+                            <div class="level-number">1</div>
+                            <div class="level-commission">5% Commission</div>
+                        </div>
+                        <div class="level-requirements">
+                            <div class="requirement"><i class="fas fa-check"></i><span>No minimum referrals required</span></div>
+                            <div class="requirement"><i class="fas fa-check"></i><span>Active investment required</span></div>
+                        </div>
+                    </div>
+                    <div class="level-card">
+                        <div class="level-header">
+                            <div class="level-number">2</div>
+                            <div class="level-commission">3% Commission</div>
+                        </div>
+                        <div class="level-requirements">
+                            <div class="requirement"><i class="fas fa-check"></i><span>10+ direct referrals</span></div>
+                            <div class="requirement"><i class="fas fa-check"></i><span>Active investment required</span></div>
+                        </div>
+                    </div>
+                    <div class="level-card">
+                        <div class="level-header">
+                            <div class="level-number">3</div>
+                            <div class="level-commission">1% Commission</div>
+                        </div>
+                        <div class="level-requirements">
+                            <div class="requirement"><i class="fas fa-check"></i><span>15+ direct referrals</span></div>
+                            <div class="requirement"><i class="fas fa-check"></i><span>Active investment required</span></div>
+                        </div>
+                    </div>
+                    <div class="level-card">
+                        <div class="level-header">
+                            <div class="level-number">4</div>
+                            <div class="level-commission">1% Commission</div>
+                        </div>
+                        <div class="level-requirements">
+                            <div class="requirement"><i class="fas fa-check"></i><span>20+ direct referrals</span></div>
+                            <div class="requirement"><i class="fas fa-check"></i><span>Active investment required</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Share Your Link</h3>
+                        <p>Share your unique referral link with friends and community members</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>They Invest</h3>
+                        <p>When someone invests using your link, they become part of your team</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Earn Commissions</h3>
+                        <p>Earn commissions from their investments across 4 different levels</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Claim Rewards</h3>
+                        <p>Withdraw your referral bonuses anytime to your wallet</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Whitepaper Section -->
+        <section class="whitepaper-section section" id="whitepaper" style="display: none;">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Whitepaper</h2>
+                    <p class="section__subtitle">Aurion Club – Where Blockchain Meets Sustainable Growth</p>
+                </div>
+                <div class="whitepaper-container">
+                    <div class="whitepaper-content">
+                        <!-- Konten whitepaper disini -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audit Report Section -->
+        <section class="audit-section section" id="audit" style="display: none;">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Security Audit Report</h2>
+                    <p class="section__subtitle">Comprehensive security assessment of Aurion Finance smart contracts</p>
+                </div>
+                <div class="audit-container">
+                    <div class="audit-content">
+                        <!-- Konten audit report disini -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Downloads Section -->
+        <section class="resources-section section" id="downloads" style="display: none;">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Official Documents</h2>
+                    <p class="section__subtitle">Download the Aurion Club whitepaper in your preferred language</p>
+                </div>
+                <div class="resources-grid">
+                    <!-- Konten download PDF disini -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section section" id="faq" style="display: none;">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Frequently Asked Questions</h2>
+                    <p class="section__subtitle">Find answers to common questions about Aurion Finance</p>
+                </div>
+                <div class="faq-container">
+                    <!-- Konten FAQ disini -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <img src="images/logo.png" alt="Aurion Club">
+                        <span>Aurion Club</span>
+                    </div>
+                    <p class="footer__description">
+                        Experience decentralized wealth creation through verified smart contracts, fixed ROI plans, and tiered referral bonuses.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://t.me/AurionClub" class="social__link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://bscscan.com/address/0xAD81F7819465e3e4201C587c20C4b8E1Bb9920eb#code" class="social__link"><i class="fas fa-file-contract"></i></a>
+                        <a href="https://t.me/AurionClubSupport" class="social__link"><i class="fas fa-headset"></i></a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Platform</h4>
+                        <a class="footer-link" data-section="home">Home</a>
+                        <a class="footer-link" data-section="invest">Invest</a>
+                        <a class="footer-link" data-section="referral">Referral</a>
+                        <a class="footer-link" data-section="dashboard">Dashboard</a>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Resources</h4>
+                        <a class="footer-link" data-section="whitepaper">Whitepaper</a>
+                        <a class="footer-link" data-section="audit">Audit Report</a>
+                        <a class="footer-link" data-section="downloads">Downloads</a>
+                        <a class="footer-link" data-section="faq">FAQ</a>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Support</h4>
+                        <a href="https://t.me/AurionClubSupport">Contact Us</a>
+                        <a href="https://t.me/AurionClub">Community</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Aurion Club</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    
+    <!-- Tautan ke file JavaScript eksternal -->
+    <script src="app.js"></script>
+</body>
+</html>
