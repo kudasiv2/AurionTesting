@@ -1,4 +1,3 @@
-javascript
 // Contract Configuration - REAL CONTRACT
 const CONTRACT_ADDRESS = '0xAD81F7819465e3e4201C587c20C4b8E1Bb9920eb';
 const USDT_ADDRESS = '0x55d398326f99059fF775485246999027B3197955';
@@ -6,7 +5,7 @@ const USDT_ADDRESS = '0x55d398326f99059fF775485246999027B3197955';
 // Stable Public RPC Node for initial loading
 const READ_ONLY_RPC = 'https://bsc-dataseed1.binance.org/';
 
-// ABIs
+// ABIs remain the same...
 const USDT_ABI = [{"constant": false, "inputs": [{"name": "_spender", "type": "address"}, {"name": "_value", "type": "uint256"}], "name": "approve", "outputs": [{"name": "", "type": "bool"}], "type": "function"}, {"constant": true, "inputs": [{"name": "_owner", "type": "address"}], "name": "balanceOf", "outputs": [{"name": "balance", "type": "uint256"}], "type": "function"}, {"constant": true, "inputs": [{"name": "_owner", "type": "address"}, {"name": "_spender", "type": "address"}], "name": "allowance", "outputs": [{"name": "", "type": "uint256"}], "type": "function"}, {"constant": true, "inputs": [], "name": "decimals", "outputs": [{"name": "", "type": "uint8"}], "type": "function"}];
 const CONTRACT_ABI = [{"inputs":[{"internalType":"address","name":"_usdtToken","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"planId","type":"uint256"},{"indexed":false,"internalType":"address","name":"upline","type":"address"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":false,"internalType":"uint256","name":"totalBalance","type":"uint256"}],"name":"PoolWithdrawn","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"address","name":"referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"ReferralBonus","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"},{"indexed":false,"internalType":"address","name":"owner","type":"address"}],"name":"ReferralBonusExpired","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"fee","type":"uint256"}],"name":"Withdraw","type":"event"},{"inputs":[],"name":"DAILY_WITHDRAWAL_LIMIT","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MIN_ACTIVE_INVESTMENT","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MIN_DEPOSIT","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MIN_WITHDRAWAL","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"OWNER_FEE_PERCENT","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"TIME_STEP","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"WITHDRAWAL_FEE_PERCENT","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"calculateAvailableEarnings","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"dailyWithdrawals","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"},{"internalType":"uint256","name":"_planId","type":"uint256"},{"internalType":"address","name":"_upline","type":"address"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"getActiveInvestmentStatus","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getContractBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getContractStats","outputs":[{"internalType":"uint256","name":"totalExpiredBonuses","type":"uint256"},{"internalType":"uint256","name":"totalWithdrawalFeesCollected","type":"uint256"},{"internalType":"uint256","name":"totalReferralBonusesPaid","type":"uint256"},{"internalType":"uint256","name":"currentContractBalance","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getPlansCount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"getUserInfo","outputs":[{"internalType":"uint256","name":"totalDeposits","type":"uint256"},{"internalType":"uint256","name":"totalWithdrawn","type":"uint256"},{"internalType":"uint256","name":"directReferrals","type":"uint256"},{"internalType":"uint256","name":"referralBonus","type":"uint256"},{"internalType":"uint256","name":"availableEarnings","type":"uint256"},{"internalType":"address","name":"upline","type":"address"},{"internalType":"bool","name":"hasActiveInvestment","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"getUserInvestments","outputs":[{"components":[{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"uint256","name":"planId","type":"uint256"},{"internalType":"uint256","name":"startTime","type":"uint256"},{"internalType":"uint256","name":"lastWithdrawalTime","type":"uint256"},{"internalType":"uint256","name":"totalWithdrawn","type":"uint256"},{"internalType":"bool","name":"active","type":"bool"}],"internalType":"struct Aurion.UserInvestment[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"investmentPlans","outputs":[{"internalType":"uint256","name":"minAmount","type":"uint256"},{"internalType":"uint256","name":"maxAmount","type":"uint256"},{"internalType":"uint256","name":"dailyROI","type":"uint256"},{"internalType":"uint256","name":"duration","type":"uint256"},{"internalType":"uint256","name":"totalROI","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"referralLevels","outputs":[{"internalType":"uint256","name":"percentage","type":"uint256"},{"internalType":"uint256","name":"minDirectReferrals","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalExpiredReferralBonuses","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalReferralBonuses","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalWithdrawalFees","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"usdtToken","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"address","name":"upline","type":"address"},{"internalType":"uint256","name":"totalDeposits","type":"uint256"},{"internalType":"uint256","name":"totalWithdrawn","type":"uint256"},{"internalType":"uint256","name":"directReferrals","type":"uint256"},{"internalType":"uint256","name":"referralBonus","type":"uint256"},{"internalType":"uint256","name":"lastWithdrawal","type":"uint256"},{"internalType":"bool","name":"exists","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdrawExpiredBonuses","outputs":[],"stateMutability":"nonpayable","type":"function"}];
 
@@ -111,7 +110,13 @@ async function loadContractData() {
             maximumFractionDigits: 2
         });
         document.getElementById('contractBalance').textContent = `${formattedBalance} USDT`;
+        // document.getElementById('totalTVL').textContent = `$${formattedBalance}`; // REMOVED
 
+        // Set loading state for elements that were removed
+        // document.getElementById('totalUsers').textContent = 'Calculating...'; // REMOVED
+        // document.getElementById('totalPaid').textContent = '$Calculating...'; // REMOVED
+
+        // 2. Robust Chunking for Events
         const latestBlock = await web3.eth.getBlockNumber();
         const CHUNK_SIZE = 3000; // Very safe chunk size for public nodes
         
@@ -122,12 +127,14 @@ async function loadContractData() {
         for (let i = DEPLOYMENT_BLOCK; i <= latestBlock; i += CHUNK_SIZE) {
             const toBlock = Math.min(i + CHUNK_SIZE - 1, Number(latestBlock));
             
+            // Fetch both event types in parallel for speed
             try {
                 const [chunkDeposits, chunkWithdraws] = await Promise.all([
                     contract.getPastEvents('Deposit', { fromBlock: i, toBlock: toBlock }),
                     contract.getPastEvents('Withdraw', { fromBlock: i, toBlock: toBlock })
                 ]);
 
+                // Process this chunk's data immediately
                 chunkDeposits.forEach(event => allInvestors.add(event.returnValues.user));
                 chunkWithdraws.forEach(event => {
                     totalPaidOutWei = totalPaidOutWei.plus(new BigNumber(event.returnValues.amount));
@@ -135,6 +142,7 @@ async function loadContractData() {
 
             } catch (chunkError) {
                 console.warn(`Failed to fetch chunk ${i}-${toBlock}, retrying once...`);
+                // Simple one-time retry logic for a failed chunk
                 try {
                      const [chunkDeposits, chunkWithdraws] = await Promise.all([
                         contract.getPastEvents('Deposit', { fromBlock: i, toBlock: toBlock }),
@@ -150,8 +158,19 @@ async function loadContractData() {
             }
         }
 
+        // 3. Finalize and Display Data (for elements that were removed)
+        // document.getElementById('totalUsers').textContent = allInvestors.size; // REMOVED
+        
+        const formattedTotalPaidOut = parseFloat(web3.utils.fromWei(totalPaidOutWei.toFixed(), 'ether')).toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+        // document.getElementById('totalPaid').textContent = `$${formattedTotalPaidOut}`; // REMOVED
+
     } catch (error) {
         console.error('Critical error loading contract data:', error);
+        // document.getElementById('totalUsers').textContent = 'Error'; // REMOVED
+        // document.getElementById('totalPaid').textContent = '$Error'; // REMOVED
     }
 }
 
@@ -161,6 +180,7 @@ async function connectWallet() {
         return showNotification('Please install MetaMask!', 'error');
     }
     try {
+        // Switch to MetaMask provider
         web3 = new Web3(window.ethereum);
         contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
         usdtContract = new web3.eth.Contract(USDT_ABI, USDT_ADDRESS);
@@ -180,6 +200,9 @@ async function connectWallet() {
             userAccount = accounts[0];
             updateWalletUI();
             loadUserData();
+            // Rerunning loadContractData here ensures we have the absolute latest data
+            // but might be redundant if read-only worked. Optional.
+            // loadContractData(); 
             showNotification('Wallet connected successfully!', 'success');
         }
     } catch (error) {
@@ -289,6 +312,7 @@ function hideWalletAlerts() {
 async function loadUserData() {
     if (!contract || !userAccount) return;
     try {
+        // Ensure we are using the connected wallet provider for user-specific data
         if (window.ethereum && web3.currentProvider !== window.ethereum) {
              web3 = new Web3(window.ethereum);
              contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
@@ -441,7 +465,7 @@ async function confirmInvestment() {
         showNotification('Investment successful!', 'success');
         investmentSuccessPopup.classList.add('active');
         await loadUserData();
-        await loadContractData();
+        await loadContractData(); // Refresh global stats after deposit
     } catch (error) {
         console.error('Investment error:', error);
         showNotification(error.message.includes("rejected") ? 'Transaction rejected' : 'Investment failed', 'error');
@@ -460,7 +484,7 @@ async function withdrawEarnings() {
         await contract.methods.withdraw().send({ from: userAccount });
         showNotification('Withdrawal successful!', 'success');
         await loadUserData();
-        await loadContractData();
+        await loadContractData(); // Refresh global stats after withdrawal
     } catch (error) {
         console.error('Withdrawal error:', error);
         showNotification(error.message.includes("rejected") ? 'Transaction rejected' : 'Withdrawal failed', 'error');
