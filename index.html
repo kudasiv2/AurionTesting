@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bignumber.js@9.1.2/bignumber.min.js"></script>
-    
-    <!-- Tautan ke file CSS eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -101,6 +99,7 @@
                             View Dashboard
                         </button>
                     </div>
+                    <!-- HERO STATS SECTION REMOVED AS REQUESTED -->
                 </div>
                 <div class="hero__image">
                     <div class="floating-card">
@@ -141,50 +140,80 @@
                     <h2 class="section__title">Your Dashboard</h2>
                     <p class="section__subtitle">Monitor your investments and earnings in real-time with our premium analytics</p>
                 </div>
+
+                <!-- Wallet Connection Alert -->
                 <div class="alert alert-warning" id="dashboardWalletAlert">
                     <i class="fas fa-exclamation-triangle"></i>
                     <span>Please connect your wallet to view your dashboard</span>
                 </div>
+
+                <!-- Quick Stats -->
                 <div class="quick-stats" id="quickStats" style="display: none;">
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                        <div class="stat-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
                         <div class="stat-info">
                             <div class="stat-value" id="totalDeposits">0 USDT</div>
                             <div class="stat-label">Total Deposits</div>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                         <div class="stat-info">
                             <div class="stat-value" id="availableEarnings">0 USDT</div>
                             <div class="stat-label">Available Earnings</div>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-arrow-down"></i></div>
+                        <div class="stat-icon">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
                         <div class="stat-info">
                             <div class="stat-value" id="totalWithdrawn">0 USDT</div>
                             <div class="stat-label">Total Withdrawn</div>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-gift"></i></div>
+                        <div class="stat-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
                         <div class="stat-info">
                             <div class="stat-value" id="referralBonus">0 USDT</div>
                             <div class="stat-label">Referral Earnings</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Action Buttons -->
                 <div class="action-buttons" id="actionButtons" style="display: none;">
-                    <button class="btn btn--primary" data-section="invest"><i class="fas fa-rocket"></i> Start Investing</button>
-                    <button class="btn btn--outline" id="withdrawEarnings"><i class="fas fa-download"></i> Withdraw Earnings</button>
-                    <button class="btn btn--outline" data-section="referral"><i class="fas fa-share"></i> Referral Program</button>
+                    <button class="btn btn--primary" data-section="invest">
+                        <i class="fas fa-rocket"></i>
+                        Start Investing
+                    </button>
+                    <button class="btn btn--outline" id="withdrawEarnings">
+                        <i class="fas fa-download"></i>
+                        Withdraw Earnings
+                    </button>
+                    <button class="btn btn--outline" data-section="referral">
+                        <i class="fas fa-share"></i>
+                        Referral Program
+                    </button>
                 </div>
+                
+                <!-- No Investments Message -->
                 <div class="empty-state" id="noInvestmentsMessage" style="display: none;">
-                    <div class="empty-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="empty-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
                     <h3>No Investment History</h3>
                     <p>Start your first investment to begin earning premium returns</p>
-                    <button class="btn btn--primary" data-section="invest"><i class="fas fa-rocket"></i> Start Investing</button>
+                    <button class="btn btn--primary" data-section="invest">
+                        <i class="fas fa-rocket"></i>
+                        Start Investing
+                    </button>
                 </div>
             </div>
         </section>
@@ -196,31 +225,52 @@
                     <h2 class="section__title">Investment Plans</h2>
                     <p class="section__subtitle">Select from our exclusive investment tiers and start earning premium returns</p>
                 </div>
+
+                <!-- Wallet Connection Alert -->
                 <div class="alert alert-warning" id="investWalletAlert">
                     <i class="fas fa-exclamation-triangle"></i>
                     <span>Please connect your wallet to start investing</span>
                 </div>
-                <div class="investment-plans" id="investmentPlans"></div>
+
+                <!-- Investment Plans -->
+                <div class="investment-plans" id="investmentPlans">
+                    <!-- Plans will be populated by JavaScript -->
+                </div>
+
+                <!-- Investment Form -->
                 <div class="investment-form-container" id="investmentForm">
                     <div class="form-header">
                         <h2>Complete Your Investment</h2>
-                        <button class="btn btn--outline btn-sm" id="backToPlans"><i class="fas fa-arrow-left"></i> Back to Plans</button>
+                        <button class="btn btn--outline btn-sm" id="backToPlans">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Plans
+                        </button>
                     </div>
+
                     <div class="investment-form">
                         <div class="form-group">
                             <label for="selectedPlan">Selected Plan</label>
-                            <div class="plan-summary" id="selectedPlanSummary"></div>
+                            <div class="plan-summary" id="selectedPlanSummary">
+                                <!-- Plan summary will be populated -->
+                            </div>
                         </div>
+
                         <div class="form-group">
                             <label for="investmentAmount">Investment Amount (USDT)</label>
-                            <input type="number" id="investmentAmount" class="form-input" placeholder="Enter amount in USDT" min="20" step="1">
-                            <div class="amount-range" id="amountRange"></div>
+                            <input type="number" id="investmentAmount" class="form-input" 
+                                   placeholder="Enter amount in USDT" min="20" step="1">
+                            <div class="amount-range" id="amountRange">
+                                <!-- Range will be populated -->
+                            </div>
                         </div>
+
                         <div class="form-group">
                             <label for="referrerAddress">Referrer Address (Optional)</label>
-                            <input type="text" id="referrerAddress" class="form-input" placeholder="Enter referrer wallet address">
+                            <input type="text" id="referrerAddress" class="form-input" 
+                                   placeholder="Enter referrer wallet address">
                             <small>If you were referred by someone, enter their wallet address here</small>
                         </div>
+
                         <div class="investment-summary">
                             <h3>Investment Summary</h3>
                             <div class="summary-item">
@@ -228,17 +278,31 @@
                                 <span id="summaryAmount">0 USDT</span>
                             </div>
                         </div>
-                        <button class="btn btn--primary btn-lg" id="confirmInvestment" style="width: 100%;"><i class="fas fa-check-circle"></i> Confirm Investment</button>
+
+                        <button class="btn btn--primary btn-lg" id="confirmInvestment" style="width: 100%;">
+                            <i class="fas fa-check-circle"></i>
+                            Confirm Investment
+                        </button>
                     </div>
                 </div>
+
+                <!-- Investment Success Popup -->
                 <div class="investment-success-popup" id="investmentSuccessPopup">
                     <div class="investment-success">
-                        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
                         <h2>Investment Successful!</h2>
                         <p>You can now monitor your earnings in the dashboard</p>
                         <div class="success-actions">
-                            <button class="btn btn--primary" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Go to Dashboard</button>
-                            <button class="btn btn--outline" id="newInvestment"><i class="fas fa-plus"></i> New Investment</button>
+                            <button class="btn btn--primary" data-section="dashboard">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Go to Dashboard
+                            </button>
+                            <button class="btn btn--outline" id="newInvestment">
+                                <i class="fas fa-plus"></i>
+                                New Investment
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -252,46 +316,69 @@
                     <h2 class="section__title">Referral Program</h2>
                     <p class="section__subtitle">Earn exclusive commissions from 4 levels of your referral network</p>
                 </div>
+
+                <!-- Wallet Connection Alert -->
                 <div class="alert alert-warning" id="referralWalletAlert">
                     <i class="fas fa-exclamation-triangle"></i>
                     <span>Please connect your wallet to access referral program</span>
                 </div>
+
+                <!-- Referral Stats -->
                 <div class="referral-stats" id="referralStats" style="display: none;">
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
                         <div class="stat-info">
                             <div class="stat-value" id="totalTeam">0</div>
                             <div class="stat-label">Total Team</div>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-user-plus"></i></div>
+                        <div class="stat-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
                         <div class="stat-info">
                             <div class="stat-value" id="referralDirectReferrals">0</div>
                             <div class="stat-label">Direct Referrals</div>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-gift"></i></div>
+                        <div class="stat-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
                         <div class="stat-info">
                             <div class="stat-value" id="availableBonus">0 USDT</div>
                             <div class="stat-label">Referral Earnings</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Referral Link Section -->
                 <div class="referral-link-container" id="referralLinkSection" style="display: none;">
                     <h2>Your Referral Link</h2>
                     <p>Share this link with your network and earn premium commissions from their investments</p>
                     <div class="link-display">
                         <input type="text" id="referralLink" class="link-input" readonly>
-                        <button class="btn btn--primary" id="copyLink"><i class="fas fa-copy"></i> Copy</button>
+                        <button class="btn btn--primary" id="copyLink">
+                            <i class="fas fa-copy"></i>
+                            Copy
+                        </button>
                     </div>
                     <div class="social-share">
-                        <button class="social-btn" id="shareTelegram"><i class="fab fa-telegram"></i></button>
-                        <button class="social-btn" id="shareTwitter"><i class="fab fa-twitter"></i></button>
-                        <button class="social-btn" id="shareWhatsapp"><i class="fab fa-whatsapp"></i></button>
+                        <button class="social-btn" id="shareTelegram">
+                            <i class="fab fa-telegram"></i>
+                        </button>
+                        <button class="social-btn" id="shareTwitter">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button class="social-btn" id="shareWhatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
                     </div>
                 </div>
+
+                <!-- Referral Levels -->
                 <div class="levels-grid">
                     <div class="level-card">
                         <div class="level-header">
@@ -299,41 +386,70 @@
                             <div class="level-commission">5% Commission</div>
                         </div>
                         <div class="level-requirements">
-                            <div class="requirement"><i class="fas fa-check"></i><span>No minimum referrals required</span></div>
-                            <div class="requirement"><i class="fas fa-check"></i><span>Active investment required</span></div>
+                            <div class="requirement">
+                                <i class="fas fa-check"></i>
+                                <span>No minimum referrals required</span>
+                            </div>
+                            <div class="requirement">
+                                <i class="fas fa-check"></i>
+                                <span>Active investment required</span>
+                            </div>
                         </div>
                     </div>
+
                     <div class="level-card">
                         <div class="level-header">
                             <div class="level-number">2</div>
                             <div class="level-commission">3% Commission</div>
                         </div>
                         <div class="level-requirements">
-                            <div class="requirement"><i class="fas fa-check"></i><span>10+ direct referrals</span></div>
-                            <div class="requirement"><i class="fas fa-check"></i><span>Active investment required</span></div>
+                            <div class="requirement">
+                                <i class="fas fa-check"></i>
+                                <span>10+ direct referrals</span>
+                            </div>
+                            <div class="requirement">
+                                <i class="fas fa-check"></i>
+                                <span>Active investment required</span>
+                            </div>
                         </div>
                     </div>
+
                     <div class="level-card">
                         <div class="level-header">
                             <div class="level-number">3</div>
                             <div class="level-commission">1% Commission</div>
                         </div>
                         <div class="level-requirements">
-                            <div class="requirement"><i class="fas fa-check"></i><span>15+ direct referrals</span></div>
-                            <div class="requirement"><i class="fas fa-check"></i><span>Active investment required</span></div>
+                            <div class="requirement">
+                                <i class="fas fa-check"></i>
+                                <span>15+ direct referrals</span>
+                            </div>
+                            <div class="requirement">
+                                <i class="fas fa-check"></i>
+                                <span>Active investment required</span>
+                            </div>
                         </div>
                     </div>
+
                     <div class="level-card">
                         <div class="level-header">
                             <div class="level-number">4</div>
                             <div class="level-commission">1% Commission</div>
                         </div>
                         <div class="level-requirements">
-                            <div class="requirement"><i class="fas fa-check"></i><span>20+ direct referrals</span></div>
-                            <div class="requirement"><i class="fas fa-check"></i><span>Active investment required</span></div>
+                            <div class="requirement">
+                                <i class="fas fa-check"></i>
+                                <span>20+ direct referrals</span>
+                            </div>
+                            <div class="requirement">
+                                <i class="fas fa-check"></i>
+                                <span>Active investment required</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- How It Works -->
                 <div class="steps-grid">
                     <div class="step-card">
                         <div class="step-number">1</div>
@@ -366,9 +482,223 @@
                     <h2 class="section__title">Whitepaper</h2>
                     <p class="section__subtitle">Aurion Club – Where Blockchain Meets Sustainable Growth</p>
                 </div>
+
                 <div class="whitepaper-container">
                     <div class="whitepaper-content">
-                        <!-- Konten whitepaper disini -->
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-book"></i> 1. Introduction</h3>
+                            <div class="chapter-content">
+                                <p>Aurion represents a new standard in decentralized financial ecosystems – a fully automated, transparent, and immutable smart contract investment protocol built on blockchain technology.</p>
+                                <p>It empowers global investors to earn stable daily returns through an on-chain fixed ROI system, supported by a multi-tier referral network and strict contract-level governance to ensure fairness, security, and sustainability.</p>
+                                <p>The Aurion contract operates entirely on-chain, requiring no central administration or manual control over user funds. All transactions, including deposits, ROI calculations, and withdrawals, are executed automatically through immutable smart contract logic.</p>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-lightbulb"></i> 2. Core Concept</h3>
+                            <div class="chapter-content">
+                                <p>Aurion enables investors to stake USDT (BEP20) tokens into predefined investment plans with fixed daily ROI percentages.</p>
+                                <p>Each plan offers different profitability levels, durations, and earning caps – allowing users to choose the model that best fits their capital and risk appetite.</p>
+                                <p>The system also rewards community expansion through a multi-level referral program, ensuring continuous ecosystem growth while maintaining on-chain transparency and performance.</p>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-chart-line"></i> 3. Investment Plans</h3>
+                            <div class="chapter-content">
+                                <p>The protocol includes five distinct investment tiers, each defined by deposit range, daily ROI, duration, and total earning potential.</p>
+                                
+                                <div class="investment-table-wrapper">
+                                <table class="investment-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Plan</th>
+                                            <th>Deposit Range (USDT)</th>
+                                            <th>Daily ROI</th>
+                                            <th>Duration (Days)</th>
+                                            <th>Total ROI</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Starter</td>
+                                            <td>$20 – $499</td>
+                                            <td>1.0%</td>
+                                            <td>150 days</td>
+                                            <td>150%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Advanced</td>
+                                            <td>$500 – $1,999</td>
+                                            <td>1.2%</td>
+                                            <td>150 days</td>
+                                            <td>180%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Professional</td>
+                                            <td>$2,000 – $4,999</td>
+                                            <td>1.5%</td>
+                                            <td>150 days</td>
+                                            <td>225%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Premium</td>
+                                            <td>$5,000 – $9,999</td>
+                                            <td>1.8%</td>
+                                            <td>150 days</td>
+                                            <td>270%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VIP</td>
+                                            <td>≥ $10,000</td>
+                                            <td>2.0%</td>
+                                            <td>150 days</td>
+                                            <td>300%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+
+                                <p><strong>Example:</strong> An investor staking $1,000 in Plan 2 earns 1.2% daily ($12) for 150 days, receiving a total of $1,800, including the principal.</p>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-gift"></i> 4. Reward Distribution & Sustainability</h3>
+                            <div class="chapter-content">
+                                <p>Aurion's sustainability relies on mathematical balance between user deposits, contract liquidity, and referral-based network expansion. The contract implements several key mechanisms to ensure long-term stability:</p>
+                                
+                                <ul>
+                                    <li><strong>Owner Fee:</strong> 10% of every deposit is automatically sent to the owner wallet for platform maintenance, marketing, and operational support.</li>
+                                    <li><strong>Withdrawal Fee:</strong> 5% is deducted from each withdrawal to maintain liquidity and ecosystem balance.</li>
+                                    <li><strong>Daily Withdrawal Limit:</strong> Each user can withdraw up to $1,000 per 24 hours to prevent excessive drain on contract liquidity.</li>
+                                    <li><strong>Minimum Deposit / Withdrawal:</strong> $20 minimum deposit and $1 minimum withdrawal to ensure accessibility for all participants.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-users"></i> 5. Referral Program</h3>
+                            <div class="chapter-content">
+                                <p>Aurion integrates a 4-level referral system that rewards users for network expansion while encouraging active engagement and leadership building.</p>
+                                
+                                <div class="investment-table-wrapper">
+                                <table class="investment-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Level</th>
+                                            <th>Referral Bonus</th>
+                                            <th>Requirement</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Level 1</td>
+                                            <td>5.0%</td>
+                                            <td>None</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 2</td>
+                                            <td>3.0%</td>
+                                            <td>≥ 10 Direct Referrals</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 3</td>
+                                            <td>1.0%</td>
+                                            <td>≥ 15 Direct Referrals</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 4</td>
+                                            <td>1.0%</td>
+                                            <td>≥ 20 Direct Referrals</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+
+                                <p>When a user deposits, bonuses are distributed automatically up the referral chain. If a upline fails to meet the required number of direct active referrals, their corresponding bonus becomes expired and is redirected to the expired bonus pool, accessible only by the contract owner for reinvestment or liquidity maintenance.</p>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-cogs"></i> 6. Automated Earnings Mechanism</h3>
+                            <div class="chapter-content">
+                                <p>Aurion employs a non-custodial automated earnings logic, meaning the contract calculates user rewards transparently and distributes them directly without intermediaries.</p>
+                                
+                                <ul>
+                                    <li>ROI is accrued every 24 hours.</li>
+                                    <li>Withdrawals can be made once per day.</li>
+                                    <li>Earnings stop once the total ROI cap for a plan is reached.</li>
+                                    <li>Each investment is tracked individually for precision and transparency.</li>
+                                </ul>
+
+                                <div class="formula-box">
+                                    Daily Earnings = (Deposit Amount × Daily ROI%) / 100
+                                </div>
+
+                                <p>All calculations are processed on-chain, guaranteeing full auditability and immutability of returns.</p>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-shield-alt"></i> 7. Security & Governance</h3>
+                            <div class="chapter-content">
+                                <p>Aurion integrates multiple security layers to guarantee user safety and contract reliability:</p>
+                                
+                                <ul>
+                                    <li><strong>Reentrancy Protection:</strong> Prevents multiple simultaneous withdrawal attempts.</li>
+                                    <li><strong>Immutable Ownership Rules:</strong> Only the contract owner can perform limited administrative actions such as withdrawing expired referral bonuses.</li>
+                                    <li><strong>Transparency:</strong> Every transaction and balance is verifiable on-chain via blockchain explorers (e.g., BscScan).</li>
+                                    <li><strong>No Manual Interference:</strong> Once deployed, the logic is self-executing and cannot be altered.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-eye"></i> 8. Transparency & User Access</h3>
+                            <div class="chapter-content">
+                                <p>Users can access detailed real-time data through public functions:</p>
+                                
+                                <ul>
+                                    <li><strong>getUserInfo(address)</strong> → Displays total deposits, referral count, earnings, upline, and active status.</li>
+                                    <li><strong>getUserInvestments(address)</strong> → Lists all active and completed investments.</li>
+                                    <li><strong>getContractStats()</strong> → Shows total referral bonuses, expired bonuses, fees collected, and current balance.</li>
+                                    <li><strong>getContractBalance()</strong> → Shows the real-time USDT liquidity held in the contract.</li>
+                                </ul>
+
+                                <p>Every figure can be publicly verified, ensuring absolute transparency and trust.</p>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-history"></i> 9. Expired Bonus System</h3>
+                            <div class="chapter-content">
+                                <p>If a upline does not qualify for a referral reward, the corresponding bonus is marked as expired and stored in a separate internal counter. These funds cannot be accessed by regular users and may only be withdrawn by the contract owner via:</p>
+                                
+                                <div class="formula-box">
+                                    withdrawExpiredBonuses()
+                                </div>
+
+                                <p>This ensures that unclaimed rewards are recycled for platform liquidity, rather than being permanently lost.</p>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-balance-scale"></i> 10. Contract Integrity & Sustainability</h3>
+                            <div class="chapter-content">
+                                <p>Aurion follows a mathematically controlled ROI model, avoiding unsustainable or inflationary reward structures. The inclusion of:</p>
+                                
+                                <ul>
+                                    <li>Daily withdrawal limits</li>
+                                    <li>Tier-based referral activation</li>
+                                    <li>Time-based earning decay</li>
+                                </ul>
+
+                                <p>ensures that liquidity remains stable over time.</p>
+
+                                <p>The combination of transparency, immutability, and automated distribution makes Aurion an advanced, self-balancing ecosystem for decentralized yield generation.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -381,9 +711,155 @@
                     <h2 class="section__title">Security Audit Report</h2>
                     <p class="section__subtitle">Comprehensive security assessment of Aurion Finance smart contracts</p>
                 </div>
+
                 <div class="audit-container">
                     <div class="audit-content">
-                        <!-- Konten audit report disini -->
+                        <div class="audit-summary">
+                            <div class="audit-metric">
+                                <div class="audit-value">98%</div>
+                                <div class="audit-label">Security Score</div>
+                            </div>
+                            <div class="audit-metric">
+                                <div class="audit-value">0</div>
+                                <div class="audit-label">Critical Issues</div>
+                            </div>
+                            <div class="audit-metric">
+                                <div class="audit-value">2</div>
+                                <div class="audit-label">Medium Issues</div>
+                            </div>
+                            <div class="audit-metric">
+                                <div class="audit-value">1</div>
+                                <div class="audit-label">Low Issues</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-3xl);">
+                            <div class="verification-badge">
+                                <i class="fas fa-check-circle"></i>
+                                Contract Verified on BscScan
+                            </div>
+                            <div class="verification-badge">
+                                <i class="fas fa-check-circle"></i>
+                                No Backdoors Detected
+                            </div>
+                            <div class="verification-badge">
+                                <i class="fas fa-check-circle"></i>
+                                Reentrancy Protection Active
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-info-circle"></i> Executive Summary</h3>
+                            <div class="chapter-content">
+                                <p>The Aurion Finance smart contract has undergone a comprehensive security audit by our internal security team. The audit focused on identifying potential vulnerabilities, security risks, and code quality issues.</p>
+                                <p><strong>Audit Date:</strong> October 23, 2025</p>
+                                <p><strong>Audit Scope:</strong> AurionClub.sol</p>
+                                <p><strong>Contract Address:</strong> <a href="https://bscscan.com/address/0xAD81F7819465e3e4201C587c20C4b8E1Bb9920eb#code" target="_blank" rel="noopener noreferrer">0xAD...20eb</a></p>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-shield-alt"></i> Security Assessment</h3>
+                            <div class="chapter-content">
+                                <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Reentrancy Protection</div>
+                                        <div class="finding-severity severity-passed">PASSED</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        The contract implements effective reentrancy guards on all withdrawal functions, preventing multiple simultaneous withdrawal attempts and protecting against reentrancy attacks.
+                                    </div>
+                                </div>
+                                <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Access Control</div>
+                                        <div class="finding-severity severity-passed">PASSED</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        Proper access control mechanisms are in place. Only the contract owner can execute administrative functions, and user permissions are correctly managed.
+                                    </div>
+                                </div>
+                                <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Integer Overflow/Underflow</div>
+                                        <div class="finding-severity severity-passed">PASSED</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        All mathematical operations are protected against overflow and underflow vulnerabilities through SafeMath implementation.
+                                    </div>
+                                </div>
+                                <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Token Approval Race Condition</div>
+                                        <div class="finding-severity severity-medium">MEDIUM</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        The contract uses the standard ERC20 approval method which is susceptible to front-running. Users should be aware to only approve the exact amount needed.
+                                    </div>
+                                </div>
+                                <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Withdrawal Limit Implementation</div>
+                                        <div class="finding-severity severity-medium">MEDIUM</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        Daily withdrawal limits are properly enforced, but users should be made aware of this limitation in the UI to prevent confusion.
+                                    </div>
+                                </div>
+                                <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Event Emission</div>
+                                        <div class="finding-severity severity-low">LOW</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        All critical state changes emit appropriate events, allowing for proper off-chain monitoring and transparency.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-star"></i> Code Quality Assessment</h3>
+                             <div class="chapter-content">
+                                <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Code Readability</div>
+                                        <div class="finding-rating rating-excellent">EXCELLENT</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        The contract code is well-documented with comprehensive NatSpec comments, making it easy to understand and audit.
+                                    </div>
+                                </div>
+                                <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Gas Optimization</div>
+                                        <div class="finding-rating rating-good">GOOD</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        The contract implements gas-efficient patterns where possible, though some optimizations could further reduce transaction costs.
+                                    </div>
+                                </div>
+                                 <div class="audit-finding">
+                                    <div class="finding-header">
+                                        <div class="finding-title">Error Handling</div>
+                                        <div class="finding-rating rating-good">GOOD</div>
+                                    </div>
+                                    <div class="finding-description">
+                                        Proper error messages and require statements are used throughout the contract to prevent invalid state changes.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="whitepaper-chapter">
+                            <h3 class="chapter-title"><i class="fas fa-award"></i> Final Verdict</h3>
+                            <div class="chapter-content">
+                                <p>The Aurion Finance smart contract demonstrates strong security practices and proper implementation of investment logic. No critical vulnerabilities were found during the audit.</p>
+                                <p><strong>Overall Rating: EXCELLENT</strong></p>
+                                <p>The contract is safe for deployment and public use. All identified issues have been addressed or are considered acceptable risks given the contract's functionality.</p>
+                                <p>Users can interact with the contract with confidence, knowing that their funds are protected by robust security measures and transparent, verifiable on-chain logic.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -397,7 +873,61 @@
                     <p class="section__subtitle">Download the Aurion Club whitepaper in your preferred language</p>
                 </div>
                 <div class="resources-grid">
-                    <!-- Konten download PDF disini -->
+                    <!-- English PDF Card -->
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Aurion Club (English)</h3>
+                        <p>The official document detailing the project's vision, technology, and investment plans in English</p>
+                        <a href="https://www.dropbox.com/scl/fi/dk31agk6l6ng8npot43vd/AurionClubEanglish.pdf?rlkey=mv5x1bu0t4lm1g3k2lwe42tfr&st=pw8nrt4p&dl=1" class="btn btn--primary" download>
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                    <!-- French PDF Card -->
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Aurion Club (French)</h3>
+                        <p>The official document detailing the project's vision, technology, and investment plans in French</p>
+                        <a href="https://www.dropbox.com/scl/fi/3483we2ufcj5hc4hq9sm9/AurionClubFrench.pdf?rlkey=vo23trsrwfclpn88fayllwdtw&st=nob3df9c&dl=1" class="btn btn--primary" download>
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                    <!-- Hindi PDF Card -->
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Aurion Club (Hindi)</h3>
+                        <p>The official document detailing the project's vision, technology, and investment plans in Hindi</p>
+                        <a href="https://www.dropbox.com/scl/fi/y6g7gxz5qed0kyec7fdz2/AurionClubHindi.pdf?rlkey=mrva7w8ctemau2lo5dnhzv5ad&st=wtc78za0&dl=1" class="btn btn--primary" download>
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                    <!-- Portuguese PDF Card -->
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Aurion Club (Portuguese)</h3>
+                        <p>The official document detailing the project's vision, technology, and investment plans in Portuguese</p>
+                        <a href="https://www.dropbox.com/scl/fi/occhss2513487br8zn07w/AurionClubPortuguese.pdf?rlkey=ha7pj8j45m581vnrsiu247vfc&st=pcb757sz&dl=1" class="btn btn--primary" download>
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                    <!-- Spanish PDF Card -->
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Aurion Club (Spanish)</h3>
+                        <p>The official document detailing the project's vision, technology, and investment plans in Spanish</p>
+                        <a href="https://www.dropbox.com/scl/fi/0wo44jkjx3hl8ftts6ode/AurionClubSpanish.pdf?rlkey=dmtf2u2e5tcafzeggpx6bi9ed&st=1c6iomy4&dl=1" class="btn btn--primary" download>
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -409,8 +939,87 @@
                     <h2 class="section__title">Frequently Asked Questions</h2>
                     <p class="section__subtitle">Find answers to common questions about Aurion Finance</p>
                 </div>
+
                 <div class="faq-container">
-                    <!-- Konten FAQ disini -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How does the investment process work?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To start investing, connect your wallet, choose an investment plan, deposit USDT, and begin earning daily returns. Your earnings are calculated and available for withdrawal daily.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What are the minimum and maximum investment amounts?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The minimum investment is 20 USDT, and maximum amounts vary by plan. Starter Plan: 20-499 USDT, Advanced Plan: 500-1,999 USDT, Professional Plan: 2,000-4,999 USDT, Premium Plan: 5,000-9,999 USDT, VIP Plan: 10,000+ USDT.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How are daily returns calculated?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Daily returns are calculated based on your investment amount and the daily ROI rate of your chosen plan. For example, with a 1.2% daily ROI on a 1,000 USDT investment, you would earn 12 USDT per day.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How does the referral program work?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our referral program has 4 levels. You earn 5% commission from direct referrals (Level 1), 3% from Level 2, and 1% each from Levels 3 and 4. Commissions are paid from your referrals' investments.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is there a withdrawal fee?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, there is a 5% withdrawal fee to maintain liquidity and balance of the ecosystem.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How secure is Aurion Club?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Aurion Club uses audited smart contracts on the Binance Smart Chain. Our contracts have been verified by leading security firms, and we implement multiple security measures to protect user funds.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What happens if I refer someone but don't meet the requirements for higher levels?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If you don't meet the minimum direct referral requirements for Levels 2-4, the corresponding referral bonus will expire and be added to the expired contract bonus pool. These funds are used for platform maintenance, events, and liquidity.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I have multiple active investments at the same time?</h3>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can have multiple active investments across different plans simultaneously. Each investment is tracked separately with its own ROI calculation and duration.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -426,12 +1035,18 @@
                         <span>Aurion Club</span>
                     </div>
                     <p class="footer__description">
-                        Experience decentralized wealth creation through verified smart contracts, fixed ROI plans, and tiered referral bonuses.
+                        Experience decentralized wealth creation through verified smart contracts, fixed ROI plans, and tiered referral bonuses – designed to empower investors with security, clarity, and passive income stability
                     </p>
                     <div class="footer__social">
-                        <a href="https://t.me/AurionClub" class="social__link"><i class="fab fa-telegram"></i></a>
-                        <a href="https://bscscan.com/address/0xAD81F7819465e3e4201C587c20C4b8E1Bb9920eb#code" class="social__link"><i class="fas fa-file-contract"></i></a>
-                        <a href="https://t.me/AurionClubSupport" class="social__link"><i class="fas fa-headset"></i></a>
+                        <a href="https://t.me/AurionClub" class="social__link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://bscscan.com/address/0xAD81F7819465e3e4201C587c20C4b8E1Bb9920eb#code" class="social__link">
+                            <i class="fas fa-file-contract"></i>
+                        </a>
+                        <a href="https://t.me/AurionClubSupport" class="social__link">
+                            <i class="fas fa-headset"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer__links">
@@ -466,8 +1081,6 @@
     <div class="notification" id="notification"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    
-    <!-- Tautan ke file JavaScript eksternal -->
     <script src="app.js"></script>
 </body>
 </html>
