@@ -24,6 +24,7 @@ const navToggle = document.getElementById('nav-toggle');
 const connectWalletBtn = document.getElementById('connectWallet');
 const notification = document.getElementById('notification');
 const investmentSuccessPopup = document.getElementById('investmentSuccessPopup');
+const header = document.querySelector('.header');
 
 // Section Elements
 const sections = {
@@ -45,7 +46,19 @@ document.addEventListener('DOMContentLoaded', function() {
     checkPreloader();
     checkURLForReferral();
     setupFAQ();
+    setupScrollHeader();
 });
+
+// Setup scroll effect for header
+function setupScrollHeader() {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
 
 // Setup FAQ functionality
 function setupFAQ() {
@@ -94,9 +107,7 @@ async function initializeApp() {
     }
 }
 
-// ===================================================================
-// MODIFIED SCRIPT: ROBUST DATA LOADING WITH AGGRESSIVE CHUNKING
-// ===================================================================
+// Load contract data
 async function loadContractData() {
     if (!contract) return;
 
@@ -110,11 +121,6 @@ async function loadContractData() {
             maximumFractionDigits: 2
         });
         document.getElementById('contractBalance').textContent = `${formattedBalance} USDT`;
-        // document.getElementById('totalTVL').textContent = `$${formattedBalance}`; // REMOVED
-
-        // Set loading state for elements that were removed
-        // document.getElementById('totalUsers').textContent = 'Calculating...'; // REMOVED
-        // document.getElementById('totalPaid').textContent = '$Calculating...'; // REMOVED
 
         // 2. Robust Chunking for Events
         const latestBlock = await web3.eth.getBlockNumber();
@@ -158,19 +164,8 @@ async function loadContractData() {
             }
         }
 
-        // 3. Finalize and Display Data (for elements that were removed)
-        // document.getElementById('totalUsers').textContent = allInvestors.size; // REMOVED
-        
-        const formattedTotalPaidOut = parseFloat(web3.utils.fromWei(totalPaidOutWei.toFixed(), 'ether')).toLocaleString('en-US', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-        // document.getElementById('totalPaid').textContent = `$${formattedTotalPaidOut}`; // REMOVED
-
     } catch (error) {
         console.error('Critical error loading contract data:', error);
-        // document.getElementById('totalUsers').textContent = 'Error'; // REMOVED
-        // document.getElementById('totalPaid').textContent = '$Error'; // REMOVED
     }
 }
 
@@ -200,9 +195,6 @@ async function connectWallet() {
             userAccount = accounts[0];
             updateWalletUI();
             loadUserData();
-            // Rerunning loadContractData here ensures we have the absolute latest data
-            // but might be redundant if read-only worked. Optional.
-            // loadContractData(); 
             showNotification('Wallet connected successfully!', 'success');
         }
     } catch (error) {
@@ -271,7 +263,7 @@ function showSection(sectionName) {
     });
     document.querySelectorAll('.nav__link').forEach(link => link.classList.remove('active'));
     if (sections[sectionName]) {
-        sections[sectionName].style.display = 'flex'; // Use flex for centering
+        sections[sectionName].style.display = 'flex';
         window.scrollTo(0, 0);
         const navLink = document.querySelector(`.nav__link[data-section="${sectionName}"]`);
         if (navLink) navLink.classList.add('active');
@@ -283,10 +275,10 @@ function showSection(sectionName) {
 
 function updateWalletUI() {
     if (userAccount) {
-        connectWalletBtn.innerHTML = `<i class="fas fa-wallet"></i> ${userAccount.substring(0, 6)}...${userAccount.substring(userAccount.length - 4)}`;
+        connectWalletBtn.innerHTML = `<i class="fas fa-wallet"></i> <span class="btn-text">${userAccount.substring(0, 6)}...${userAccount.substring(userAccount.length - 4)}</span>`;
         hideWalletAlerts();
     } else {
-        connectWalletBtn.innerHTML = `<i class="fas fa-wallet"></i> Connect Wallet`;
+        connectWalletBtn.innerHTML = `<i class="fas fa-wallet"></i> <span class="btn-text">Connect Wallet</span>`;
         showWalletAlerts();
     }
 }
@@ -389,7 +381,7 @@ function generateInvestmentPlans() {
             <div class="plan-duration">${plan.duration}</div>
             <div class="plan-total">${plan.total}</div>
             <ul class="plan-features">${plan.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}</ul>
-            <button class="btn btn--primary" style="margin-top: auto;"><i class="fas fa-arrow-right"></i> Select Plan</button>
+            <button class="btn btn--primary btn-glow" style="margin-top: auto;"><i class="fas fa-arrow-right"></i> Select Plan</button>
         </div>
     `).join('');
     document.querySelectorAll('.plan-card').forEach(card => {
