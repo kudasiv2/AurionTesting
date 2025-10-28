@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurion Finance - Where Blockchain Meets Sustainable Growth</title>
+    <title>Aurion Club - Where Blockchain Meets Sustainable Growth</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -60,9 +60,9 @@
                 </ul>
 
                 <div class="nav__buttons">
-                    <button class="btn btn--primary" id="connectWallet">
+                    <button class="btn btn--outline" id="connectWallet">
                         <i class="fas fa-wallet"></i>
-                        <span class="btn-text">Connect Wallet</span>
+                        Connect Wallet
                     </button>
                 </div>
             </div>
@@ -90,11 +90,11 @@
                         Experience decentralized wealth creation through verified smart contracts, fixed ROI plans, and tiered referral bonuses – designed to empower investors with security, clarity, and passive income stability
                     </p>
                     <div class="hero__buttons">
-                        <button class="btn btn--primary btn-glow" data-section="invest">
+                        <button class="btn btn--primary" data-section="invest">
                             <i class="fas fa-rocket"></i>
                             Start Investing
                         </button>
-                        <button class="btn btn--outline btn-glow" data-section="dashboard">
+                        <button class="btn btn--outline" data-section="dashboard">
                             <i class="fas fa-chart-line"></i>
                             View Dashboard
                         </button>
@@ -112,7 +112,7 @@
                         <div class="card__content">
                             <div class="stat-item">
                                 <span>Total Value Locked</span>
-                                <span class="value" id="contractBalance">0 USDT</span>
+                                <span class="value" id="contractBalance">Loading...</span>
                             </div>
                             <div class="stat-item">
                                 <span>Daily ROI</span>
@@ -130,16 +130,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Animated Background Elements -->
-            <div class="hero-bg-elements">
-                <div class="bg-particle particle-1"></div>
-                <div class="bg-particle particle-2"></div>
-                <div class="bg-particle particle-3"></div>
-                <div class="bg-particle particle-4"></div>
-                <div class="bg-glow glow-1"></div>
-                <div class="bg-glow glow-2"></div>
-            </div>
         </section>
 
         <!-- Dashboard Section -->
@@ -150,13 +140,11 @@
                     <p class="section__subtitle">Monitor your investments and earnings in real-time with our premium analytics</p>
                 </div>
 
-                <!-- Wallet Connection Alert -->
                 <div class="alert alert-warning" id="dashboardWalletAlert">
                     <i class="fas fa-exclamation-triangle"></i>
                     <span>Please connect your wallet to view your dashboard</span>
                 </div>
 
-                <!-- Quick Stats -->
                 <div class="quick-stats" id="quickStats" style="display: none;">
                     <div class="stat-card">
                         <div class="stat-icon">
@@ -196,30 +184,28 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons -->
                 <div class="action-buttons" id="actionButtons" style="display: none;">
-                    <button class="btn btn--primary btn-glow" data-section="invest">
+                    <button class="btn btn--primary" data-section="invest">
                         <i class="fas fa-rocket"></i>
                         Start Investing
                     </button>
-                    <button class="btn btn--outline btn-glow" id="withdrawEarnings">
+                    <button class="btn btn--outline" id="withdrawEarnings">
                         <i class="fas fa-download"></i>
                         Withdraw Earnings
                     </button>
-                    <button class="btn btn--outline btn-glow" data-section="referral">
+                    <button class="btn btn--outline" data-section="referral">
                         <i class="fas fa-share"></i>
                         Referral Program
                     </button>
                 </div>
                 
-                <!-- No Investments Message -->
                 <div class="empty-state" id="noInvestmentsMessage" style="display: none;">
                     <div class="empty-icon">
                         <i class="fas fa-chart-pie"></i>
                     </div>
                     <h3>No Investment History</h3>
                     <p>Start your first investment to begin earning premium returns</p>
-                    <button class="btn btn--primary btn-glow" data-section="invest">
+                    <button class="btn btn--primary" data-section="invest">
                         <i class="fas fa-rocket"></i>
                         Start Investing
                     </button>
@@ -235,18 +221,15 @@
                     <p class="section__subtitle">Select from our exclusive investment tiers and start earning premium returns</p>
                 </div>
 
-                <!-- Wallet Connection Alert -->
                 <div class="alert alert-warning" id="investWalletAlert">
                     <i class="fas fa-exclamation-triangle"></i>
                     <span>Please connect your wallet to start investing</span>
                 </div>
 
-                <!-- Investment Plans -->
                 <div class="investment-plans" id="investmentPlans">
                     <!-- Plans will be populated by JavaScript -->
                 </div>
 
-                <!-- Investment Form -->
                 <div class="investment-form-container" id="investmentForm">
                     <div class="form-header">
                         <h2>Complete Your Investment</h2>
@@ -288,14 +271,13 @@
                             </div>
                         </div>
 
-                        <button class="btn btn--primary btn-lg btn-glow" id="confirmInvestment" style="width: 100%;">
+                        <button class="btn btn--primary btn-lg" id="confirmInvestment" style="width: 100%;">
                             <i class="fas fa-check-circle"></i>
                             Confirm Investment
                         </button>
                     </div>
                 </div>
 
-                <!-- Investment Success Popup -->
                 <div class="investment-success-popup" id="investmentSuccessPopup">
                     <div class="investment-success">
                         <div class="success-icon">
@@ -304,11 +286,11 @@
                         <h2>Investment Successful!</h2>
                         <p>You can now monitor your earnings in the dashboard</p>
                         <div class="success-actions">
-                            <button class="btn btn--primary btn-glow" data-section="dashboard">
+                            <button class="btn btn--primary" data-section="dashboard">
                                 <i class="fas fa-tachometer-alt"></i>
                                 Go to Dashboard
                             </button>
-                            <button class="btn btn--outline btn-glow" id="newInvestment">
+                            <button class="btn btn--outline" id="newInvestment">
                                 <i class="fas fa-plus"></i>
                                 New Investment
                             </button>
@@ -326,13 +308,11 @@
                     <p class="section__subtitle">Earn exclusive commissions from 4 levels of your referral network</p>
                 </div>
 
-                <!-- Wallet Connection Alert -->
                 <div class="alert alert-warning" id="referralWalletAlert">
                     <i class="fas fa-exclamation-triangle"></i>
                     <span>Please connect your wallet to access referral program</span>
                 </div>
 
-                <!-- Referral Stats -->
                 <div class="referral-stats" id="referralStats" style="display: none;">
                     <div class="stat-card">
                         <div class="stat-icon">
@@ -363,13 +343,12 @@
                     </div>
                 </div>
 
-                <!-- Referral Link Section -->
                 <div class="referral-link-container" id="referralLinkSection" style="display: none;">
                     <h2>Your Referral Link</h2>
-                    <p>Share this link with your network and earn premium commissions from their investments</p>
+                    <p>Share this link with your network and earn commissions from their investments</p>
                     <div class="link-display">
                         <input type="text" id="referralLink" class="link-input" readonly>
-                        <button class="btn btn--primary btn-glow" id="copyLink">
+                        <button class="btn btn--primary" id="copyLink">
                             <i class="fas fa-copy"></i>
                             Copy
                         </button>
@@ -387,7 +366,6 @@
                     </div>
                 </div>
 
-                <!-- Referral Levels -->
                 <div class="levels-grid">
                     <div class="level-card">
                         <div class="level-header">
@@ -458,7 +436,6 @@
                     </div>
                 </div>
 
-                <!-- How It Works -->
                 <div class="steps-grid">
                     <div class="step-card">
                         <div class="step-number">1</div>
@@ -495,7 +472,7 @@
                 <div class="whitepaper-container">
                     <div class="whitepaper-content">
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-book"></i> 1. Introduction</h3>
+                            <h3 class="chapter-title"><i class="fas fa-book"></i> Introduction</h3>
                             <div class="chapter-content">
                                 <p>Aurion represents a new standard in decentralized financial ecosystems – a fully automated, transparent, and immutable smart contract investment protocol built on blockchain technology.</p>
                                 <p>It empowers global investors to earn stable daily returns through an on-chain fixed ROI system, supported by a multi-tier referral network and strict contract-level governance to ensure fairness, security, and sustainability.</p>
@@ -504,7 +481,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-lightbulb"></i> 2. Core Concept</h3>
+                            <h3 class="chapter-title"><i class="fas fa-lightbulb"></i> Core Concept</h3>
                             <div class="chapter-content">
                                 <p>Aurion enables investors to stake USDT (BEP20) tokens into predefined investment plans with fixed daily ROI percentages.</p>
                                 <p>Each plan offers different profitability levels, durations, and earning caps – allowing users to choose the model that best fits their capital and risk appetite.</p>
@@ -513,7 +490,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-chart-line"></i> 3. Investment Plans</h3>
+                            <h3 class="chapter-title"><i class="fas fa-chart-line"></i> Investment Plans</h3>
                             <div class="chapter-content">
                                 <p>The protocol includes five distinct investment tiers, each defined by deposit range, daily ROI, duration, and total earning potential.</p>
                                 
@@ -573,7 +550,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-gift"></i> 4. Reward Distribution & Sustainability</h3>
+                            <h3 class="chapter-title"><i class="fas fa-gift"></i> Reward Distribution & Sustainability</h3>
                             <div class="chapter-content">
                                 <p>Aurion's sustainability relies on mathematical balance between user deposits, contract liquidity, and referral-based network expansion. The contract implements several key mechanisms to ensure long-term stability:</p>
                                 
@@ -587,7 +564,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-users"></i> 5. Referral Program</h3>
+                            <h3 class="chapter-title"><i class="fas fa-users"></i> Referral Program</h3>
                             <div class="chapter-content">
                                 <p>Aurion integrates a 4-level referral system that rewards users for network expansion while encouraging active engagement and leadership building.</p>
                                 
@@ -630,7 +607,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-cogs"></i> 6. Automated Earnings Mechanism</h3>
+                            <h3 class="chapter-title"><i class="fas fa-cogs"></i> Automated Earnings Mechanism</h3>
                             <div class="chapter-content">
                                 <p>Aurion employs a non-custodial automated earnings logic, meaning the contract calculates user rewards transparently and distributes them directly without intermediaries.</p>
                                 
@@ -650,7 +627,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-shield-alt"></i> 7. Security & Governance</h3>
+                            <h3 class="chapter-title"><i class="fas fa-shield-alt"></i> Security & Governance</h3>
                             <div class="chapter-content">
                                 <p>Aurion integrates multiple security layers to guarantee user safety and contract reliability:</p>
                                 
@@ -664,7 +641,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-eye"></i> 8. Transparency & User Access</h3>
+                            <h3 class="chapter-title"><i class="fas fa-eye"></i> Transparency & User Access</h3>
                             <div class="chapter-content">
                                 <p>Users can access detailed real-time data through public functions:</p>
                                 
@@ -680,7 +657,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-history"></i> 9. Expired Bonus System</h3>
+                            <h3 class="chapter-title"><i class="fas fa-history"></i> Expired Bonus System</h3>
                             <div class="chapter-content">
                                 <p>If a upline does not qualify for a referral reward, the corresponding bonus is marked as expired and stored in a separate internal counter. These funds cannot be accessed by regular users and may only be withdrawn by the contract owner via:</p>
                                 
@@ -693,7 +670,7 @@
                         </div>
 
                         <div class="whitepaper-chapter">
-                            <h3 class="chapter-title"><i class="fas fa-balance-scale"></i> 10. Contract Integrity & Sustainability</h3>
+                            <h3 class="chapter-title"><i class="fas fa-balance-scale"></i> Contract Integrity & Sustainability</h3>
                             <div class="chapter-content">
                                 <p>Aurion follows a mathematically controlled ROI model, avoiding unsustainable or inflationary reward structures. The inclusion of:</p>
                                 
@@ -718,7 +695,7 @@
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Security Audit Report</h2>
-                    <p class="section__subtitle">Comprehensive security assessment of Aurion Finance smart contracts</p>
+                    <p class="section__subtitle">Comprehensive security assessment of Aurion Club smart contracts</p>
                 </div>
 
                 <div class="audit-container">
@@ -760,7 +737,7 @@
                         <div class="whitepaper-chapter">
                             <h3 class="chapter-title"><i class="fas fa-info-circle"></i> Executive Summary</h3>
                             <div class="chapter-content">
-                                <p>The Aurion Finance smart contract has undergone a comprehensive security audit by our internal security team. The audit focused on identifying potential vulnerabilities, security risks, and code quality issues.</p>
+                                <p>The Aurion Club smart contract has undergone a comprehensive security audit by our internal security team. The audit focused on identifying potential vulnerabilities, security risks, and code quality issues.</p>
                                 <p><strong>Audit Date:</strong> October 23, 2025</p>
                                 <p><strong>Audit Scope:</strong> AurionClub.sol</p>
                                 <p><strong>Contract Address:</strong> <a href="https://bscscan.com/address/0xAD81F7819465e3e4201C587c20C4b8E1Bb9920eb#code" target="_blank" rel="noopener noreferrer">0xAD...20eb</a></p>
@@ -863,7 +840,7 @@
                         <div class="whitepaper-chapter">
                             <h3 class="chapter-title"><i class="fas fa-award"></i> Final Verdict</h3>
                             <div class="chapter-content">
-                                <p>The Aurion Finance smart contract demonstrates strong security practices and proper implementation of investment logic. No critical vulnerabilities were found during the audit.</p>
+                                <p>The Aurion Club smart contract demonstrates strong security practices and proper implementation of investment logic. No critical vulnerabilities were found during the audit.</p>
                                 <p><strong>Overall Rating: EXCELLENT</strong></p>
                                 <p>The contract is safe for deployment and public use. All identified issues have been addressed or are considered acceptable risks given the contract's functionality.</p>
                                 <p>Users can interact with the contract with confidence, knowing that their funds are protected by robust security measures and transparent, verifiable on-chain logic.</p>
@@ -882,58 +859,63 @@
                     <p class="section__subtitle">Download the Aurion Club whitepaper in your preferred language</p>
                 </div>
                 <div class="resources-grid">
-                    <!-- English PDF Card -->
                     <div class="resource-card">
                         <div class="resource-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <h3>Aurion Club (English)</h3>
                         <p>The official document detailing the project's vision, technology, and investment plans in English</p>
-                        <a href="https://www.dropbox.com/scl/fi/dk31agk6l6ng8npot43vd/AurionClubEanglish.pdf?rlkey=mv5x1bu0t4lm1g3k2lwe42tfr&st=pw8nrt4p&dl=1" class="btn btn--primary btn-glow" download>
+                        <a href="https://www.dropbox.com/scl/fi/dk31agk6l6ng8npot43vd/AurionClubEanglish.pdf?rlkey=mv5x1bu0t4lm1g3k2lwe42tfr&st=pw8nrt4p&dl=1" class="btn btn--primary" download>
                             <i class="fas fa-download"></i> Download PDF
                         </a>
                     </div>
-                    <!-- French PDF Card -->
                     <div class="resource-card">
                         <div class="resource-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <h3>Aurion Club (French)</h3>
                         <p>The official document detailing the project's vision, technology, and investment plans in French</p>
-                        <a href="https://www.dropbox.com/scl/fi/3483we2ufcj5hc4hq9sm9/AurionClubFrench.pdf?rlkey=vo23trsrwfclpn88fayllwdtw&st=nob3df9c&dl=1" class="btn btn--primary btn-glow" download>
+                        <a href="https://www.dropbox.com/scl/fi/3483we2ufcj5hc4hq9sm9/AurionClubFrench.pdf?rlkey=vo23trsrwfclpn88fayllwdtw&st=nob3df9c&dl=1" class="btn btn--primary" download>
                             <i class="fas fa-download"></i> Download PDF
                         </a>
                     </div>
-                    <!-- Hindi PDF Card -->
                     <div class="resource-card">
                         <div class="resource-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <h3>Aurion Club (Hindi)</h3>
                         <p>The official document detailing the project's vision, technology, and investment plans in Hindi</p>
-                        <a href="https://www.dropbox.com/scl/fi/y6g7gxz5qed0kyec7fdz2/AurionClubHindi.pdf?rlkey=mrva7w8ctemau2lo5dnhzv5ad&st=wtc78za0&dl=1" class="btn btn--primary btn-glow" download>
+                        <a href="https://www.dropbox.com/scl/fi/y6g7gxz5qed0kyec7fdz2/AurionClubHindi.pdf?rlkey=mrva7w8ctemau2lo5dnhzv5ad&st=wtc78za0&dl=1" class="btn btn--primary" download>
                             <i class="fas fa-download"></i> Download PDF
                         </a>
                     </div>
-                    <!-- Portuguese PDF Card -->
                     <div class="resource-card">
                         <div class="resource-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <h3>Aurion Club (Portuguese)</h3>
                         <p>The official document detailing the project's vision, technology, and investment plans in Portuguese</p>
-                        <a href="https://www.dropbox.com/scl/fi/occhss2513487br8zn07w/AurionClubPortuguese.pdf?rlkey=ha7pj8j45m581vnrsiu247vfc&st=pcb757sz&dl=1" class="btn btn--primary btn-glow" download>
+                        <a href="https://www.dropbox.com/scl/fi/occhss2513487br8zn07w/AurionClubPortuguese.pdf?rlkey=ha7pj8j45m581vnrsiu247vfc&st=pcb757sz&dl=1" class="btn btn--primary" download>
                             <i class="fas fa-download"></i> Download PDF
                         </a>
                     </div>
-                    <!-- Spanish PDF Card -->
                     <div class="resource-card">
                         <div class="resource-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <h3>Aurion Club (Spanish)</h3>
                         <p>The official document detailing the project's vision, technology, and investment plans in Spanish</p>
-                        <a href="https://www.dropbox.com/scl/fi/0wo44jkjx3hl8ftts6ode/AurionClubSpanish.pdf?rlkey=dmtf2u2e5tcafzeggpx6bi9ed&st=1c6iomy4&dl=1" class="btn btn--primary btn-glow" download>
+                        <a href="https://www.dropbox.com/scl/fi/0wo44jkjx3hl8ftts6ode/AurionClubSpanish.pdf?rlkey=dmtf2u2e5tcafzeggpx6bi9ed&st=1c6iomy4&dl=1" class="btn btn--primary" download>
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Aurion Club (Indonesian)</h3>
+                        <p>The official document detailing the project's vision, technology, and investment plans in Indonesian</p>
+                        <a href="https://www.dropbox.com/scl/fi/taemd4a8n5688tzgvazbv/AurionClubIndonesia.pdf?rlkey=lpliwjeewwx7ijvqy5g25hwwc&st=l2t0o7u3&dl=1" class="btn btn--primary" download>
                             <i class="fas fa-download"></i> Download PDF
                         </a>
                     </div>
@@ -946,7 +928,7 @@
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Frequently Asked Questions</h2>
-                    <p class="section__subtitle">Find answers to common questions about Aurion Finance</p>
+                    <p class="section__subtitle">Find answers to common questions about Aurion Club</p>
                 </div>
 
                 <div class="faq-container">
@@ -1050,10 +1032,13 @@
                         <a href="https://t.me/AurionClub" class="social__link">
                             <i class="fab fa-telegram"></i>
                         </a>
+                        <a href="https://x.com/AurionClub" class="social__link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                         <a href="https://bscscan.com/address/0xAD81F7819465e3e4201C587c20C4b8E1Bb9920eb#code" class="social__link">
                             <i class="fas fa-file-contract"></i>
                         </a>
-                        <a href="https://t.me/AurionClubSupport" class="social__link">
+                        <a href="https://t.me/AurionClubSupportBot" class="social__link">
                             <i class="fas fa-headset"></i>
                         </a>
                     </div>
